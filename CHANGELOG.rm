@@ -1,0 +1,43 @@
+📑 ClosedWonSummary – Change Log
+v1.0.0 (Initial Build)
+
+Created Apex Controller ClosedWonSummaryController
+
+Returns aggregated totals of Closed Won Opportunities by CloseDate
+
+Timeframes: Yesterday, Today, This Month, Last Month, This Year, Last Year
+
+Created LWC closedWonSummary
+
+Displays six metric cards with formatted currency totals
+
+Deployed as an App Page component (usable on App, Home, Record pages)
+
+Created Metadata files for Apex + LWC
+
+v1.0.1 (Bug Fix – Invalid Field)
+
+Fixed SOQL queries: replaced incorrect custom field reference
+❌ Actual_Closed_Date__c → ✅ CloseDate (standard field)
+
+v1.0.2 (Bug Fix – Invalid Alias)
+
+Fixed sumAmount alias issue in SOQL aggregation:
+
+Replaced direct alias access with AggregateResult casting
+
+Implemented helper method getAggregate(String dateLiteral)
+
+Now handles null results safely, returning 0 when no records found
+
+v1.0.3 (Deployment Verified)
+
+Successfully deployed to CreteSandbox
+
+Verified the following were created:
+
+Apex Class: ClosedWonSummaryController
+
+LWC Bundle: closedWonSummary
+
+Component added to Lightning App Builder → functioning as expected
