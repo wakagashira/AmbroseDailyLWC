@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Closed Won Summary" icon-name="standard:opportunity">
+        <template if:true={cards}>
+            <div class="slds-grid slds-wrap">
+                <template for:each={cards} for:item="card">
+                    <div key={card.label} class="slds-col slds-size_1-of-2 slds-p-around_small">
+                        <lightning-card title={card.label}>
+                            <div class="slds-text-heading_medium slds-p-around_small">
+                                {card.value}
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-p-around_small">{error}</p>
+        </template>
+    </lightning-card>
+</template>
